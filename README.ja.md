@@ -28,13 +28,13 @@ $ cd fuel-docs-tools
 行数が原文と一致しているかどうかチェックします。
 
 ```
-$ php check line
+$ php check.php line
 ```
 
 翻訳の進捗状況を出力します。行数が原文と一致してる必要があります。
 
 ```
-$ php check progress
+$ php check.php progress
 ```
 
 ## ライセンス
