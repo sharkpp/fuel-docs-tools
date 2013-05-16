@@ -2,17 +2,17 @@
 
 ## インストール
 
-FuelPHP の本家ドキュメント (英語) と日本語ドキュメントのリポジトリを取得し、ブランチを合わせます。
+FuelPHP の本家ドキュメント (英語) と日本語ドキュメントのリポジトリを取得し、ブランチを合わせます。フォルダ名は、以下のように fuel-docs および fuel-docs-nekoget としてください。
 
 ```
 $ git clone git://github.com/fuel/docs.git fuel-docs
 $ cd fuel-docs
-$ git checkout 1.5/develop
+$ git checkout 1.6/develop
 $ cd ..
 
 $ git clone git://github.com/NEKOGET/FuelPHP_docs_jp.git fuel-docs-nekoget
 $ cd fuel-docs-nekoget
-$ git checkout 1.5/develop_japanese
+$ git checkout 1.6/develop_japanese
 $ cd ..
 ```
 
@@ -24,6 +24,15 @@ $ cd fuel-docs-tools
 ```
 
 ## 使い方
+
+日本語ドキュメントに、GitHub へのリンクを追加します。
+
+```
+$ php add-github-link.php <バージョン>
+
+例
+$ php add-github-link.php 1.6
+```
 
 行数が原文と一致しているかどうかチェックします。
 
