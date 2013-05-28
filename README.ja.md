@@ -2,6 +2,13 @@
 
 ## インストール
 
+fuel-docs-tools を取得します。
+
+```
+$ git clone git://github.com/kenjis/fuel-docs-tools
+$ cd fuel-docs-tools
+```
+
 FuelPHP の本家ドキュメント (英語) と日本語ドキュメントのリポジトリを取得し、ブランチを合わせます。フォルダ名は、以下のように fuel-docs および fuel-docs-nekoget としてください。
 
 ```
@@ -14,13 +21,6 @@ $ git clone git://github.com/NEKOGET/FuelPHP_docs_jp.git fuel-docs-nekoget
 $ cd fuel-docs-nekoget
 $ git checkout 1.6/develop_japanese
 $ cd ..
-```
-
-fuel-docs-tools を同じ階層に取得します。
-
-```
-$ git clone git://github.com/kenjis/fuel-docs-tools
-$ cd fuel-docs-tools
 ```
 
 ## 使い方

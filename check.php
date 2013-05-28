@@ -8,8 +8,8 @@
  * @link       https://github.com/kenjis/fuel-docs-tools
  */
 
-$en_dir = '../fuel-docs';
-$ja_dir = '../fuel-docs-nekoget';
+$en_dir = './fuel-docs';
+$ja_dir = './fuel-docs-nekoget';
 
 
 mb_internal_encoding('UTF-8');
@@ -21,6 +21,11 @@ spl_autoload_register(function ($class) {
 function check_line(FuelDocs $docs_en, FuelDocs $docs_ja)
 {
     $error = false;
+    
+    echo 'checking branches:', PHP_EOL;
+    system('cd ' . $docs_en->getDir() . '; git status');
+    system('cd ' . $docs_ja->getDir() . '; git status');
+    echo PHP_EOL;
     
     foreach ($docs_en as $file => $val) {
         $line_en = $docs_en->getLineCount($file);

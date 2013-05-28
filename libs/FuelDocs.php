@@ -44,6 +44,11 @@ class FuelDocs implements Iterator
         //var_dump($this->docs);
     }
     
+    public function getDir()
+    {
+        return $this->dir;
+    }
+    
     public static function getFileLines($file)
     {
         return count(file($file));
