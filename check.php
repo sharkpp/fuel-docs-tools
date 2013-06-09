@@ -44,14 +44,19 @@ function check_line(FuelDocs $docs_en, FuelDocs $docs_ja)
 
 function check_progress(FuelDocs $docs_en, FuelDocs $docs_ja)
 {
+    $rates = array();
+    
     foreach ($docs_en as $file => $val) {
         $content_en = $docs_en->getContents($file);
         $content_ja = $docs_ja->getContents($file);
         
         $rate = FuelDocs::calcProgress($content_en, $content_ja);
         echo $file, "\t", sprintf("%d", $rate), PHP_EOL;
+        $rates[] = $rate;
         //if ($file === 'general/constants.html') exit;
     }
+	
+    echo PHP_EOL, 'average: ', array_sum($rates) / count($rates), PHP_EOL;
 }
 
 
