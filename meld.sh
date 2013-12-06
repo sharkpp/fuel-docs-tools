@@ -8,4 +8,4 @@ if [ $# -eq 0 ]; then
 fi
 
 file="$1"
-meld "./fuel-docs/$file" "./fuel-docs-nekoget/$file"
+meld "./fuel-docs/$file" "./fuel-docs-nekoget/$file" &
