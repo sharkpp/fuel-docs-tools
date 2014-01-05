@@ -22,7 +22,7 @@ if ( ! isset($argv[1])) {
 $config = array(
     'target_dir' => './fuel-docs-nekoget/',
     'version'    => $argv[1],
-    'copyright_line' => '&copy; FuelPHP Development Team 2010-2013 - <a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.',
+    'copyright_line' => '&copy; FuelPHP Development Team 2010-2014 - <a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.',
 );
 
 $fm = new FileManager($config, 'AddGitHubLink');
