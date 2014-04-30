@@ -74,9 +74,11 @@ $docs_ja = new FuelDocs($ja_dir);
 
 switch ($cmd) {
     case 'line':
+    case 'l':
         check_line($docs_en, $docs_ja);
         break;
     case 'progress':
+    case 'p':
         check_line($docs_en, $docs_ja);
         check_progress($docs_en, $docs_ja);
         break;
