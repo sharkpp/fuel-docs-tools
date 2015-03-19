@@ -16,13 +16,15 @@ if ( ! isset($argv[1])) {
     echo 'Add GitHub links to HTML files' . PHP_EOL . PHP_EOL;
     echo 'Usage:' . PHP_EOL;
     echo ' php add-github-link.php <version>' . PHP_EOL;
+    echo ' eg, php add-github-link.php 1.8' . PHP_EOL;
     exit(1);
 }
 
 $config = array(
     'target_dir' => './fuel-docs-nekoget/',
     'version'    => $argv[1],
-    'copyright_line' => '&copy; FuelPHP Development Team 2010-2014 - <a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.',
+    // update copyright year if needed
+    'copyright_line' => '&copy; FuelPHP Development Team 2010-2015 - <a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.',
 );
 
 $fm = new FileManager($config, 'AddGitHubLink');
