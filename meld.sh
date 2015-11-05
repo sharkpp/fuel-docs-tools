@@ -9,3 +9,4 @@ fi
 
 file="$1"
 meld "./fuel-docs/$file" "./fuel-docs-nekoget/$file" &
+firefox "./fuel-docs-nekoget/$file" &
