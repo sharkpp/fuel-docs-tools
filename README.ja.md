@@ -46,7 +46,7 @@ $ php check.php line
 $ php check.php progress
 ```
 
-原文と翻訳の日付をチェックチェックします。
+原文と翻訳のコミット日付をチェックします。
 
 ```
 $ php check.php date
