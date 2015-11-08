@@ -14,12 +14,12 @@ FuelPHP の本家ドキュメント (英語) と日本語ドキュメントの�
 ```
 $ git clone git://github.com/fuel/docs.git fuel-docs
 $ cd fuel-docs
-$ git checkout 1.6/develop
+$ git checkout 1.8/develop
 $ cd ..
 
 $ git clone git://github.com/NEKOGET/FuelPHP_docs_jp.git fuel-docs-nekoget
 $ cd fuel-docs-nekoget
-$ git checkout 1.6/develop_japanese
+$ git checkout 1.8/develop_japanese
 $ cd ..
 ```
 
@@ -31,7 +31,7 @@ $ cd ..
 $ php add-github-link.php <バージョン>
 
 例
-$ php add-github-link.php 1.6
+$ php add-github-link.php 1.8
 ```
 
 行数が原文と一致しているかどうかチェックします。
@@ -44,6 +44,12 @@ $ php check.php line
 
 ```
 $ php check.php progress
+```
+
+原文と翻訳の日付をチェックチェックします。
+
+```
+$ php check.php date
 ```
 
 ## ライセンス
