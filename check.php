@@ -32,8 +32,8 @@ function check_line(FuelDocs $docs_en, FuelDocs $docs_ja)
         $line_ja = $docs_ja->getLineCount($file);
         
         if ($line_en !== $line_ja - 1) {
-          echo $file, ' : en ', $line_en, ' ja ', $line_ja, PHP_EOL;
-          $error = true;
+            echo $file, ' : en ', $line_en, ' ja ', $line_ja, PHP_EOL;
+            $error = true;
         }
     }
     
@@ -55,8 +55,26 @@ function check_progress(FuelDocs $docs_en, FuelDocs $docs_ja)
         $rates[] = $rate;
         //if ($file === 'general/constants.html') exit;
     }
-	
+    
     echo PHP_EOL, 'average: ', array_sum($rates) / count($rates), PHP_EOL;
+}
+
+function check_date(FuelDocs $docs_en, FuelDocs $docs_ja)
+{
+    foreach ($docs_en as $file => $val) {
+        $date_en = new DateTime($docs_en->getDate($file));
+        $date_ja = new DateTime($docs_ja->getDate($file));
+        
+        if ($date_en >= $date_ja) {
+            echo $file, ' : en ', $date_en->format('Y-m-d H:m:s O'),
+                ' ja ', $date_ja->format('Y-m-d H:m:s O'), PHP_EOL;
+            $error = true;
+        }
+    }
+    
+    if ($error) {
+        exit(1);
+    }
 }
 
 
@@ -64,6 +82,7 @@ if (! isset($argv[1])) {
     echo 'Usage:', PHP_EOL;
     echo '  ', $argv[0] . ' line' . PHP_EOL;
     echo '  ', $argv[0] . ' progress' . PHP_EOL;
+    echo '  ', $argv[0] . ' date' . PHP_EOL;
     exit(1);
 }
 
@@ -73,6 +92,10 @@ $docs_en = new FuelDocs($en_dir);
 $docs_ja = new FuelDocs($ja_dir);
 
 switch ($cmd) {
+    case 'date':
+    case 'd':
+        check_date($docs_en, $docs_ja);
+        break;
     case 'line':
     case 'l':
         check_line($docs_en, $docs_ja);

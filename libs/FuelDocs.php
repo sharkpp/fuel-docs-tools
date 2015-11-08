@@ -72,6 +72,11 @@ class FuelDocs implements Iterator
         }
     }
     
+    public function getDate($file)
+    {
+        return exec("cd $this->dir; git log --oneline --pretty=format:\"%cd\" --date=iso $file | head -1");
+    }
+
     public static function prepContents($contents)
     {
         // remove JavaScript
