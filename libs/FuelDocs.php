@@ -100,7 +100,7 @@ class FuelDocs implements Iterator
             if ($line === 'Documentation') {
                 $line = '';
             }
-            if ($line === '&copy; FuelPHP Development Team 2010-2014 - <a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.') {
+            if (preg_match('!\A&copy; FuelPHP Development Team 2010-\d\d\d\d - <a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license\.\z!', $line) === 1) {
                 $line = '';
             }
             if (substr($line, 0, 18) === '<h4 class="method"') {
